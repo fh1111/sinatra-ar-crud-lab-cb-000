@@ -17,7 +17,11 @@ class ApplicationController < Sinatra::Base
     redirect to '/posts'
   end
 
-
+  get '/posts' do #loads index page
+    @posts = Post.all
+    erb :index
+  end
+  
   get '/' do
 
   end
