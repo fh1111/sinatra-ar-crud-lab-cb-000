@@ -8,14 +8,14 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
-  get '/articles/new' do #loads new form
+  get '/posts/new' do #loads new form
     erb :new
   end
 
-  post '/articles' do  #creates a post
-    @post = Article.create(params)
-    redirect to '/articles'
-  end 
+  post '/posts' do  #creates a post
+    @post = Post.create(params)
+    redirect to '/posts'
+  end
 
 
   get '/' do
